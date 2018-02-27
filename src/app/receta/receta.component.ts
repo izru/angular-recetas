@@ -17,6 +17,8 @@ export class RecetaComponent implements OnInit {
   iconoGluten:string;
   cocinero:string;
   ingredientes:string[];
+  numIngredientes:number;
+  isMostrar:boolean;
 
   constructor() { 
     console.log('RecetaComponent constructor');
@@ -27,6 +29,8 @@ export class RecetaComponent implements OnInit {
     this.isGlutenFree= true;   
     this.cocinero='Carlos Arguiñano';
     this.ingredientes=['Calamares','Limon','Salsa AliOli','Pan'];
+    this.numIngredientes= this.ingredientes.length;
+    this.isMostrar=false;
     
     
   }
@@ -38,6 +42,9 @@ export class RecetaComponent implements OnInit {
   sumarLikes() {
     console.log('Click sumarlikes');
     this.likes++;
+  }
+  mostrar(){
+    this.isMostrar =!this.isMostrar;
   }
 
   

@@ -14,11 +14,19 @@
       </p>
 
         <section class="ingredientes">
-          <h4>Ingredientes</h4>
+          <h4>
+              <span class="numIngredientes" >  {{numIngredientes}}</span>
+            Ingredientes 
+            <span class="glyphicon glyphicon-chevron-up"  *ngIf="!isMostrar" (click)="mostrar()"></span>
+            <span class="glyphicon glyphicon-chevron-down" *ngIf="isMostrar" (click)="mostrar()"></span> 
+          </h4>
+          
           <!--directiva nfFor-->
-          <ol>
-            <li *ngFor="let ingrediente of ingredientes" >{{ingrediente}}</li>
+          
+          <ol *ngIf="isMostrar">
+            <li *ngFor="let ingrediente of ingredientes"  >{{ingrediente}}</li>
           </ol>
+        
         </section>
       </div>
     </div>
