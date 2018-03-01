@@ -2,4 +2,13 @@
 h1{color: $primary-color;
     text-align: center;}
 body > .container
-{padding-top: 60px;}
+{padding-top: 60px;
+}
+footer{
+    background-color: black;
+    
+    .text-muted{        
+        text-align: center;
+        color:white;
+    }
+}

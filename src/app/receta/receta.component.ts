@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+//importar clases
+import {Receta} from '../model/recetas';
 
 @Component({
   selector: 'app-receta',
@@ -8,29 +10,28 @@ import { Component, OnInit } from '@angular/core';
 export class RecetaComponent implements OnInit {
 
   //atributos
-  nombre:string;
-  foto:string;
-  imagen:string;
-  likes:number;
-  descripcion: string;
+  
   isGlutenFree:boolean;
   iconoGluten:string;
-  cocinero:string;
-  ingredientes:string[];
-  numIngredientes:number;
+ 
+ 
   isMostrar:boolean;
+  glyphicon:string;
+  receta:Receta;
+  
 
   constructor() { 
     console.log('RecetaComponent constructor');
-    this.nombre='Tortilla patatas';
-    this.foto='https://www.divinacocina.es/wp-content/uploads/tortilla-de-patatas-porcion-cortada.jpg';
-    this.likes=15;
-    this.descripcion='Jugosa tortilla con huevo y patatas';
-    this.isGlutenFree= true;   
-    this.cocinero='Carlos Arguiñano';
-    this.ingredientes=['Calamares','Limon','Salsa AliOli','Pan'];
-    this.numIngredientes= this.ingredientes.length;
+    this.receta =new Receta('Marmitako');  
+    this.receta.addIngrediente('Patatas'); 
+    this.receta.addIngrediente('Atun'); 
+    this.receta.addIngrediente('Pimiento');
+    this.receta.addIngrediente('Cebolla'); 
+    this.receta.addIngrediente('Tomate');   
+    this.receta.descripcion ='Guiso de bonito y patatas tradicional de la cocina vasca';
+        
     this.isMostrar=false;
+    this.glyphicon='glyphicon-chevron-down';
     
     
   }
@@ -41,10 +42,12 @@ export class RecetaComponent implements OnInit {
 
   sumarLikes() {
     console.log('Click sumarlikes');
-    this.likes++;
+    this.receta.likes++;
   }
   mostrar(){
+    console.log('Click mostrar ingrediensts');
     this.isMostrar =!this.isMostrar;
+     this.glyphicon =(this.isMostrar)? 'glyphicon-chevron-up': 'glyphicon-chevron-down';
   }
 
   

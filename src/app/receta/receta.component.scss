@@ -23,9 +23,13 @@
 .ingredientes{
     h4{
         text-align: center;
-        font-size: 1.2em;
+        font-size: 1.6em;
         border-bottom:1px solid black;
-        border-top:1px solid black
+        border-top:1px solid black;
+        &:hover{
+             background-color: brown;
+             cursor:pointer;
+        }
     }
     .numIngredientes {
         background-color: blue;
@@ -33,4 +37,9 @@
         width: 2em;
         color:white;
     }
+    span.glyphicon{
+        float: right;
+        margin-right: 10px;
+    }
+    
 }
