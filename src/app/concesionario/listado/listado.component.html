@@ -1,0 +1,5 @@
+<ul>
+    <li *ngFor="let coche of stock">
+        <a (click)="seleccionar($event, coche)">{{coche.marca}} {{coche.modelo}}</a>
+    </li>    
+  </ul>
