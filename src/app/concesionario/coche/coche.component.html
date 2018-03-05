@@ -1,11 +1,20 @@
 <div class="col-xs-6 col-md-3">
-  <div  class="thumbnail">
-    <img src="{{coche.foto}}" alt="{{coche.marca}}">
-    <h3>{{coche.marca}} </h3>
-    <p>{{coche.modelo}} {{coche.version}}</p> 
-    <p>{{coche.caballos}} cc</p>   
-    <p>{{coche.puertas}} puertas</p>
-    <p>{{coche.consumo}} l/km</p>
+  <div  class="thumbnail" *ngIf="!(c1.marca=='')" >
+    <img src="{{c1.foto}}" alt="{{c1.marca}}">
+    <h3>{{c1.marca}} </h3>
+    <p>{{c1.modelo}} {{c1.version}}</p> 
+    <p>{{c1.caballos}} CV 
+        <span [class]="(c1.caballos-c2.caballos>0)?'badge positivo':'badge negativo'">{{c1.caballos-c2.caballos}}</span>
+    </p>   
+    <p>{{c1.puertas}} puertas
+        <span [class]="(c1.puertas-c2.puertas>0)?'badge positivo':'badge negativo'">{{c1.puertas-c2.puertas}}</span>
+
+    </p>
+    <p>{{c1.consumo}} l/km
+        <span [class]="(c1.consumo-c2.consumo>0)?'badge positivo':'badge negativo'">{{c1.consumo-c2.consumo |round}}</span>
+      
+    </p>
+    
   </div>
 </div>
     

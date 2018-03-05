@@ -1,5 +1,8 @@
+<input [(ngModel)]="searchText" placeholder="busca coche">
 <ul>
-    <li *ngFor="let coche of stock">
-        <a (click)="seleccionar($event, coche)">{{coche.marca}} {{coche.modelo}}</a>
+    <li *ngFor="let coche of stock | filter:searchText">
+            <span class="glyphicon glyphicon-ok-sign" aria-hidden="true" *ngIf="(coche == c1) ||(coche == c2)" ></span>
+        	
+        <a [class.active]="(coche == c1) ||(coche == c2) " (click)="seleccionar($event, coche)">{{coche.marca}} {{coche.modelo}}</a>
     </li>    
   </ul>

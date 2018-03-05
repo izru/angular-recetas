@@ -2,15 +2,15 @@
 
 <p>soy un concesionario</p>
 
-
+<!-- barra de navegacion con los nombres de los coches
 <nav aria-label="Catalogo de coches">
   <ul class="pagination">
-    <li *ngFor="let coche of stock" [class.active]="coche == coche1">
+    <li *ngFor="let coche of stock" [class.active]="coche == coche1 || coche == coche2">
       <a>{{coche.marca}} {{coche.modelo}}</a>
     </li>
   </ul>  
 </nav>
-
+-->
 
 <div class="row">
 
@@ -19,13 +19,12 @@
   <div class="panel-heading">
     <h3 class="panel-title">Catalogo de coches</h3>
   </div>
-  <div class="panel-body">
-    Listado Coches
-    <div >
+  <div class="panel-body">    
+    <div class="listado">
       <!--llamada al componente hijo: en coche.componente.ts el selector es app-coche-->
             <!-- llamda componente Hijo -->
-            <app-listado [stockParametro]="stock"
-            (eventoEmitir)="recibirCoche($event)"></app-listado>
+            <app-listado [stockParametro]="stock"  [c1]="coche1" [c2]="coche2"
+            (eventoEmitir)="recibirCoche($event)" ></app-listado>
             <!-- al componente hijo le pasamos un parametro coche
         <app-coche [cocheParametro]="cocheIteracion"
        (cocheSeleccionado)="recibirCoche($event)"> 
@@ -45,9 +44,9 @@
     </div>
     <div class="panel-body">   
       <!--llamada al componente hijo -->  
-      <app-coche [cocheParametro]="coche1">          
+      <app-coche [c1]="coche1" [c2]="coche2">          
       </app-coche>
-      <app-coche [cocheParametro]="coche2">          
+      <app-coche [c1]="coche2" [c2]="coche1">          
       </app-coche>
     </div>  
 </div>

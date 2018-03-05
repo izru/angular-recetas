@@ -19,5 +19,5 @@ export class Coche{
         this.caballos=caballos;
         this.consumo=consumo;
         this.puertas=puertas;
-    }
+    }    
 }

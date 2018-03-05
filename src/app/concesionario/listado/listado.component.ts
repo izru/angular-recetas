@@ -12,9 +12,17 @@ export class ListadoComponent implements OnInit {
   //parametro de entrada desde el compoenete padre al hijo
   @Output() eventoEmitir = new EventEmitter(); //parametro de salida, neceario en el impor Output y el EvenEmitter
   //los parametos de salida se realizan a traves de eventos
+  @Input('c1') c1:Coche; //paso de pametro coche, necesario en el import la Input
+  //parametro de entrada desde el compoenete padre al hijo
+  //coche para mostrar
+  @Input('c2') c2:Coche; // coche para comparar
+
+  //criterio del buscador
+  searchText:string;
   constructor() { }
 
   ngOnInit() {
+  
   }
     /** 
    * funcion para emitir el eventos desde el hijo hacia el padre

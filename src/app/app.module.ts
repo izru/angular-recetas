@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+//librerias para formulario
+import { FormsModule } from '@angular/forms';
 
 //Nuestro Modulo para Routing
 import { AppRouter } from './app.route';
+
 
 import { AppComponent } from './app.component';
 import { RecetaComponent } from './receta/receta.component';
@@ -13,6 +16,16 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { ConcesionarioComponent } from './concesionario/concesionario.component';
 import { CocheComponent } from './concesionario/coche/coche.component';
 import { ListadoComponent } from './concesionario/listado/listado.component';
+import { CochesService } from './provides/coches.service';
+//pipes
+
+import { FilterPipe } from './pipes/filter.pipe';
+import { RoundPipe } from './pipes/round.pipe';
+import { RecetarioComponent } from './recetario/recetario.component';
+import { RecetaDetalleComponent } from './recetario/receta-detalle/receta-detalle.component';
+import { ListadoRecetaComponent } from './Recetario/listado-receta/listado-receta.component';
+
+
 
 
 @NgModule({
@@ -25,13 +38,21 @@ import { ListadoComponent } from './concesionario/listado/listado.component';
     UsuarioComponent,
     ConcesionarioComponent,
     CocheComponent,
-    ListadoComponent
+    ListadoComponent,
+    RoundPipe,
+    FilterPipe,
+    RecetaDetalleComponent,   
+    RecetarioComponent, ListadoRecetaComponent
+    
   ],
   imports: [
     BrowserModule,
-    AppRouter
+    AppRouter,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    CochesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
