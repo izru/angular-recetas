@@ -1,3 +1,11 @@
 <p>
   listado-receta works!
 </p>
+
+<ul>
+    <li *ngFor="let receta of stock | filter:searchText">
+            <span class="glyphicon glyphicon-ok-sign" aria-hidden="true" *ngIf="(receta == receta1)" ></span>
+        	
+        <a [class.active]="(receta == receta1) " (click)="seleccionar($event, receta)">{{receta.nombre}} </a>
+    </li>    
+  </ul>

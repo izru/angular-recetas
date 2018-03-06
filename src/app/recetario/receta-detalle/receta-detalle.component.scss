@@ -1,3 +1,6 @@
+row{
+    padding: 20px;
+}
 .thumbnail{
     position: relative;
     p{
@@ -6,21 +9,34 @@
     span.label{
         float:right;
     }
-    span.cocinero{
-        font-style: italic;
-    }
+    
+    
 
 }
 .logo{
-    width: 45px;
-    height: 45px;
-    top:10px;
-    right: 10px;
+    max-width: 45px;
+    max-height: 45px;
+    top:5px;
+    right: 20px;
     position:absolute;
     border-radius: 10px;
 }
+img{
+    width: 100%;
+    border-radius: 10px;
 
-.ingredientes{
+}
+
+.cocinero{
+    font-style: italic;
+    float:right;
+    
+}
+.nombre{
+    float:left;
+    font-size: 2em;
+}
+div.ingredientes{
     h4{
         text-align: center;
         font-size: 1.6em;
@@ -37,9 +53,22 @@
         width: 2em;
         color:white;
     }
+    .label{
+        float: right;
+
+    }
     span.glyphicon{
         float: right;
         margin-right: 10px;
     }
+    ul{
+        
+        padding-left: 3em;
+       
+    }
     
+
+} 
+div.descripcion{
+    padding-top: 2em;
 }

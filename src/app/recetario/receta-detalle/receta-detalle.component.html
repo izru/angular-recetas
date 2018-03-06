@@ -1,16 +1,32 @@
-<div>
-  <img src="{{receta.foto}}" alt="...">
-  <img class ="logo" *ngIf="isGlutenFree" src="/assets/img/glutenicon.png" alt="sin gluten">
-  <img class ="logo" *ngIf="!isGlutenFree" src="/assets/img/gluteniconred.png" alt="con gluten">
-  <h3>{{receta.nombre | uppercase}}</h3>
-  <span class="cocinero">{{receta.cocinero}}</span>
+<div class="row">
+
+    <div class="col-xs-6">
+<div class="foto">
+  <!--{{receta |json}}-->
+  <img src="{{receta.foto}}" alt="{{receta.nombre}}">
+  <img class ="logo" *ngIf="receta.isGlutenFree" src="/assets/img/glutenicon.png" alt="sin gluten">
+  <img class ="logo" *ngIf="!receta.isGlutenFree" src="/assets/img/gluteniconred.png" alt="con gluten">
+  <p class="cocinero">Receta de {{receta.cocinero}}</p>
+  <p class="nombre">{{receta.nombre | uppercase}}</p>
+  
 </div>
-     
-<div class="caption ingredientes">       
+</div>
+<!--{{receta.ingredientes |json}}-->
+<div class="col-xs-6"> 
+  <div class= "caption ingredientes">
+  <h3>Ingredientes</h3> 
+    <ul>
+       <li *ngFor="let ingrediente of receta.ingredientes">
+         {{ingrediente}}
+
+        </li>
+        </ul>
         <span class="label label-primary" (click)="sumarLikes()">Likes {{receta.likes}}<i class="fa fa-heart-o" aria-hidden="true"></i></span>
-       
+      </div> 
 </div>
-<div>
+<div  class="col-xs-12"> 
+  <div class="descripcion"></div>
  <p>{{ (receta.descripcion.length>150)? (receta.descripcion | slice:0:150)+'...':(receta.descripcion) }} </p>
  <p>
+</div>
 </div>

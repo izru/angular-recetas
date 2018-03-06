@@ -28,7 +28,7 @@ export class RecetaComponent implements OnInit {
     this.receta.addIngrediente('Pimiento');
     this.receta.addIngrediente('Cebolla'); 
     this.receta.addIngrediente('Tomate');   
-    this.receta.descripcion ='Guiso de bonito y patatas tradicional de la cocina vasca';
+    //this.receta.descripcion ='Guiso de bonito y patatas tradicional de la cocina vasca';
         
     this.isMostrar=false;
     this.glyphicon='glyphicon-chevron-down';

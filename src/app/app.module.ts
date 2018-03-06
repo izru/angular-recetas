@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 //Nuestro Modulo para Routing
 import { AppRouter } from './app.route';
 
-
+//componentes
 import { AppComponent } from './app.component';
 import { RecetaComponent } from './receta/receta.component';
 import { PropiedadesComponent } from './propiedades/propiedades.component';
@@ -16,14 +16,20 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { ConcesionarioComponent } from './concesionario/concesionario.component';
 import { CocheComponent } from './concesionario/coche/coche.component';
 import { ListadoComponent } from './concesionario/listado/listado.component';
-import { CochesService } from './provides/coches.service';
-//pipes
-
-import { FilterPipe } from './pipes/filter.pipe';
-import { RoundPipe } from './pipes/round.pipe';
 import { RecetarioComponent } from './recetario/recetario.component';
 import { RecetaDetalleComponent } from './recetario/receta-detalle/receta-detalle.component';
 import { ListadoRecetaComponent } from './Recetario/listado-receta/listado-receta.component';
+
+//servicios
+import {RecetasService} from './provides/recetas.service';
+
+import { CochesService } from './provides/coches.service';
+
+//pipes
+import { FilterPipe } from './pipes/filter.pipe';
+import { RoundPipe } from './pipes/round.pipe';
+
+
 
 
 
@@ -42,7 +48,8 @@ import { ListadoRecetaComponent } from './Recetario/listado-receta/listado-recet
     RoundPipe,
     FilterPipe,
     RecetaDetalleComponent,   
-    RecetarioComponent, ListadoRecetaComponent
+    RecetarioComponent, 
+    ListadoRecetaComponent
     
   ],
   imports: [
@@ -51,7 +58,9 @@ import { ListadoRecetaComponent } from './Recetario/listado-receta/listado-recet
     FormsModule
   ],
   providers: [
-    CochesService
+    CochesService,
+    RecetasService
+
   ],
   bootstrap: [AppComponent]
 })

@@ -1,15 +1,26 @@
 <div class="row">
 
-  <div class="col-xs-4 col-md-2">
+  <div class="col-xs-3">
   <div class="panel panel-info">
     <div class="panel-heading">
       <h3 class="panel-title">Lista Recetas</h3>
     </div>
     <div class="panel-body">    
-      <div class="listado">        
-           <!--   <app-listado [stockParametro]="stock"  [recetaParametro]="receta"
-              (eventoEmitir)="recibirReceta($event)" ></app-listado>
-           -->  
+      <div class="listado"> 
+      <!--  <app-listado-receta [stockParametro]="stock"  [recetaParametro]="receta" (eventoEmitir)="recibirReceta($event)">
+        </app-listado-receta>  -->
+        <ul>
+          <li *ngFor="let r of listaRecetas"
+          (click)="seleccionarReceta(r)">                  
+                  
+                 <!--<a [class.active]="(receta == receta1) " (click)="seleccionar($event, receta)">{{receta.nombre}} </a>-->
+                <span [class.active]="(r == receta)" >{{r.nombre}}
+                    <span class="glyphicon glyphicon-ok-sign" aria-hidden="true" *ngIf="(r == receta)" > </span>
+                </span> 
+           
+          </li>    
+        </ul>    
+           
       </div>
     </div>  
   </div>
@@ -17,16 +28,19 @@
   
   
   
-  <div class="col-xs-8 col-md-10">
+  <div class="col-xs-9">
+    <div class="buscar">
+      <input [(ngModel)]="searchText" placeholder="busca receta">
+      <span class="glyphicon glyphicon-search"></span>
+    </div>
   <div class="panel panel-info ">
       <div class="panel-heading">
-        <h3 class="panel-title">Receta</h3>
+        <h3 class="panel-title">Detalle Receta</h3>
       </div>
       <div class="panel-body">   
         <!--llamada al componente hijo -->  
-       <!-- <app-receta  [recetaParametro]="receta">          
-        </app-receta>-->
-        <app-receta-detalle></app-receta-detalle>
+       
+        <app-receta-detalle [recetaParametro]="receta"></app-receta-detalle>
       </div>  
   </div>
   </div>
