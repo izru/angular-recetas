@@ -1,16 +1,16 @@
 <div class="row">
 
-  <div class="col-xs-3">
-  <div class="panel panel-info">
+  <div class="col-xs-3">      
+  <div class="panel panel-info" id="listado">
     <div class="panel-heading">
-      <h3 class="panel-title">Lista Recetas</h3>
-    </div>
-    <div class="panel-body">    
+      <h3 class="panel-title">Lista Recetas<span class="glyphicon glyphicon-plus-sign" id="añadir"></span> </h3>
+    </div>    
+    <div class="panel-body"> 
       <div class="listado"> 
       <!--  <app-listado-receta [stockParametro]="stock"  [recetaParametro]="receta" (eventoEmitir)="recibirReceta($event)">
         </app-listado-receta>  -->
         <ul>
-          <li *ngFor="let r of listaRecetas"
+          <li *ngFor="let r of listaRecetas |filtrosRecetas:searchText:glutenFilter"
           (click)="seleccionarReceta(r)">                  
                   
                  <!--<a [class.active]="(receta == receta1) " (click)="seleccionar($event, receta)">{{receta.nombre}} </a>-->
@@ -21,17 +21,21 @@
           </li>    
         </ul>    
            
-      </div>
-    </div>  
+      </div> 
+      <!--formulario con ventana modal -->
+  <app-formulario></app-formulario>
+    </div>  <!--panel body-->
   </div>
   </div>
-  
-  
-  
+    
   <div class="col-xs-9">
-    <div class="buscar">
-      <input [(ngModel)]="searchText" placeholder="busca receta">
-      <span class="glyphicon glyphicon-search"></span>
+    <div class="buscar">        
+        <input [(ngModel)]="searchText" placeholder="busca receta o ingrediente" id="buscador">  
+        <span class="glyphicon glyphicon-search"></span>    
+        <div id="glutenFilter">
+      <label for="glutenFilter">Recetas sin gluten</label>
+      <input type="checkbox" [(ngModel)]="glutenFilter" name="glutenFilter" > 
+    </div>
     </div>
   <div class="panel panel-info ">
       <div class="panel-heading">

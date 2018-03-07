@@ -13,5 +13,20 @@ li{
 }
 
 .buscar{
-    padding:10px;
+    padding-bottom:20px;
+    #buscador{
+        //margin-right: 5em;
+        float: left;
+    }
+    #glutenFilter{
+        float: right;
+    }
+
+}
+
+#listado{
+    span#añadir{
+        float: right;
+
+    }
 }

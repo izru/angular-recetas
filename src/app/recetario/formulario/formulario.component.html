@@ -1,0 +1,67 @@
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-link btn-lg" data-toggle="modal" data-target="#modalReceta">
+    Cocinar Nueva Receta
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="modalReceta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" id="btn-close" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">Nueva Receta</h4>
+        </div>
+        <div class="modal-body">
+          <p>Valores: {{formulario.value | json}}</p>
+          <p>Estados: {{formulario.status | json}}</p>
+          <hr>
+             <form [formGroup]="formulario" (ngSubmit)="sumitar($event)" novalidate>
+                <div class="row">
+                  <div class="col-xs-6"> 
+              <div class="form-group" class="form-inline">
+                <label form="nombre">Nombre:</label>
+                <input formControlName="nombre" placeholder="Nombre">
+                <p *ngIf="formulario.controls.nombre.invalid && formulario.controls.nombre.touched" class="text-danger">*Obligatorio, minimo 2 letras</p>
+              </div>
+              <div class="form-group" class="form-inline">
+                  <label form="cocinero">Cocinero:</label>
+                  <input formControlName="cocinero" placeholder="Cocinero">
+                  <p *ngIf="formulario.controls.cocinero.invalid && formulario.controls.cocinero.touched" class="text-danger">*Minimo 5 letras</p>
+                </div>
+              
+              <div class="form-group" class="form-inline">
+                  <label form="gluten">Gluten:</label>                   
+                 <input type="radio" value="true" name="gluten"  required> Si
+                  <input type="radio" value="false" name="gluten"  required> No            
+               </div>
+               </div>
+               <div class="col-xs-6"> 
+                  <div class="form-group" class="form-inline">                   
+                                            
+                      <img src={{formulario.controls.fotoURL.value}}>
+                     <!-- <img  src="*ngIf=(formulario.controls.fotoURL.value ==='')?'./assets/img/cocheDefecto.png':'./assets/img/cocheDefecto.png'">-->
+                      
+                      <label form="fotoURL">Foto:</label>
+                      <input formControlName="fotoURL" placeholder="Url">
+                      <p *ngIf="formulario.controls.fotoURL.invalid && formulario.controls.fotoURL.touched" class="text-danger">*Obligatorio</p>
+                   </div>
+                </div>
+                <div class="col-xs-12"> 
+                  <div class="form-group" class="form-inline" id=descripcion>
+                    <label>Descripcion:</label>
+                    <input formControlName="descripcion" placeholder="Descripcion" >
+                    <p *ngIf="formulario.controls.descripcion.invalid && formulario.controls.descripcion.touched" class="text-danger">*Obligatorio, minimo 100 letras</p>
+                  </div>
+               </div>               
+               
+                 </div>  <!--row--> 
+            <input type="submit" [disabled]="!formulario.valid" class="btn btn-success btn-block" value="Crear"  >
+          </form>
+        </div>        
+      </div>
+    </div>
+  </div>
+  

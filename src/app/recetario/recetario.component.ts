@@ -14,8 +14,10 @@ export class RecetarioComponent implements OnInit {
   receta: Receta;
  //criterio del buscador
  searchText:string;
+ glutenFilter:boolean;
  constructor( private recetasService : RecetasService ) { 
   console.log('RecetarioComponent constructor');
+  this.glutenFilter=false;
 }
 ngOnInit() {
   console.log('RecetarioComponent ngOnInit');
@@ -28,6 +30,10 @@ ngOnInit() {
 seleccionarReceta( receta : Receta ){
   console.log('RecetarioComponent seleccionarReceta');
   this.receta = receta;
+}
+changeGlutenFilter(){
+  console.log('RecetarioComponent changeGlutenFilter');
+  this.glutenFilter=!this.glutenFilter;
 }
 
 }

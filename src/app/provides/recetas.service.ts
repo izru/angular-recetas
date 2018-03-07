@@ -35,5 +35,14 @@ export class RecetasService {
 
     return this.recetas;
   }
+  /**
+   * 
+   * @param receta : Receta nueva
+   */
+  crear(receta):void{
+    console.log ('RecetaService crear %o', receta);
+    this.recetas.unshift(receta);
+
+  }
 
 }
