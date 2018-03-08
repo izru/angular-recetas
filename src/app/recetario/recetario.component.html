@@ -1,9 +1,9 @@
 <div class="row">
 
-  <div class="col-xs-3">      
+  <div class="col-xs-4">      
   <div class="panel panel-info" id="listado">
     <div class="panel-heading">
-      <h3 class="panel-title">Lista Recetas<span class="glyphicon glyphicon-plus-sign" id="añadir"></span> </h3>
+      <h3 class="panel-title">Lista Recetas<app-formulario></app-formulario> </h3> <!--formulario con ventana modal -->
     </div>    
     <div class="panel-body"> 
       <div class="listado"> 
@@ -22,13 +22,13 @@
         </ul>    
            
       </div> 
-      <!--formulario con ventana modal -->
-  <app-formulario></app-formulario>
+     
+  
     </div>  <!--panel body-->
   </div>
   </div>
     
-  <div class="col-xs-9">
+  <div class="col-xs-8">
     <div class="buscar">        
         <input [(ngModel)]="searchText" placeholder="busca receta o ingrediente" id="buscador">  
         <span class="glyphicon glyphicon-search"></span>    

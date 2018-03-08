@@ -17,7 +17,7 @@
 <div class="col-xs-4 col-md-2">
 <div class="panel panel-info">
   <div class="panel-heading">
-    <h3 class="panel-title">Catalogo de coches</h3>
+    <h3 class="panel-title">Catalogo de coches</h3> 
   </div>
   <div class="panel-body">    
     <div class="listado">
@@ -31,7 +31,8 @@
       </app-coche> 
       con (cocheSeleccionado)="recibirCoche($event)"> recogemos el evento-->
     </div>
-  </div>  
+  </div> 
+  <app-nuevo></app-nuevo>
 </div>
 </div>
 
@@ -48,6 +49,7 @@
       </app-coche>
       <app-coche [c1]="coche2" [c2]="coche1">          
       </app-coche>
+      
     </div>  
 </div>
 </div>

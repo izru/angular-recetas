@@ -1,12 +1,26 @@
 img{
-    border: 1px solid red;
-    max-width: 250px;
-    //min-width: 200px;
+    max-width: 240px;
+   height: auto;
     display:block;
 }
+ 
+#cocinero label {
+    display:block;
+}
+
+#nombre {
+    display: block;    
+}
 #descripcion{
-    label, input{
+    label{
     display:block;
     }
+    textarea{
+        max-width: 100%;
+        min-width: 100%;
+        min-height: 20%;
+    }
+
+    
 
 }

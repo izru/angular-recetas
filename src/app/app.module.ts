@@ -29,6 +29,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { RoundPipe } from './pipes/round.pipe';
 import { FilterRecetas } from './pipes/filtros-recetas.pipe';
 import { FormularioComponent } from './recetario/formulario/formulario.component';
+import { NuevoComponent } from './concesionario/nuevo/nuevo.component';
 
 
 
@@ -50,7 +51,8 @@ import { FormularioComponent } from './recetario/formulario/formulario.component
     RecetarioComponent, 
     ListadoRecetaComponent,
     FilterRecetas,
-    FormularioComponent
+    FormularioComponent,
+    NuevoComponent
    
     
   ],

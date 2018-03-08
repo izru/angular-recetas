@@ -71,4 +71,10 @@ div.ingredientes{
 } 
 div.descripcion{
     padding-top: 2em;
+    overflow: auto;
+    word-wrap: break-word; // para que el parrafo no se salga del div
+    p{
+        max-width: 100%;
+    }
+    
 }

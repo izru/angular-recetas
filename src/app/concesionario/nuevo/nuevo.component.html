@@ -1,0 +1,84 @@
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-lg btn-block " data-toggle="modal" data-target="#modalCoche">
+  Nuevo
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="modalCoche" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" id="btn-close" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">Nuevo Coche</h4>
+        </div>
+        <div class="modal-body">
+          <p>Valores: {{formulario.value | json}}</p>
+          <p>Estados: {{formulario.status | json}}</p>
+          <hr>
+             <form [formGroup]="formulario" (ngSubmit)="sumitar($event)" novalidate>
+                <div class="row">
+                  <div class="col-xs-6"> 
+              <div [ngClass]="estilosInput(formulario.controls.marca)">
+                <label form="marca" class="control-label" id="marca" >Marca:</label>
+                <input formControlName="marca" placeholder="Marca" class="form-control">
+                <p *ngIf="formulario.controls.marca.invalid && formulario.controls.marca.touched" class="text-danger">*Obligatorio</p>
+              </div>
+
+              <div [ngClass]="estilosInput(formulario.controls.modelo)" >
+                  <label form="modelo" class="control-label" id="modelo">Modelo:</label>
+                  <input formControlName="modelo" placeholder="Modelo" class="form-control">
+                  <p *ngIf="formulario.controls.modelo.invalid && formulario.controls.modelo.touched" class="text-danger">*Obligatorio</p>
+                </div>
+
+                <div [ngClass]="estilosInput(formulario.controls.consumo)" >
+                  <label form="consumo" class="control-label" id="consumo">Consumo:</label>
+                  <input formControlName="consumo" placeholder="Consumo" class="form-control">
+                  <p *ngIf="formulario.controls.consumo.invalid && formulario.controls.consumo.touched" class="text-danger"></p>
+                </div>
+
+                <div [ngClass]="estilosInput(formulario.controls.caballos)" >
+                  <label form="caballos" class="control-label" id="caballos">Caballos:</label>
+                  <input formControlName="caballos" placeholder="Caballos" class="form-control">
+                  <p *ngIf="formulario.controls.caballos.invalid && formulario.controls.caballos.touched" class="text-danger"></p>
+                </div>
+              
+
+                <div [ngClass]="estilosInput(formulario.controls.puertas)" >
+                  <label form="puertas" class="control-label" id="puertas">Puertas:</label>
+                  <input formControlName="puertas" placeholder="Puertas" class="form-control">
+                  <p *ngIf="formulario.controls.puertas.invalid && formulario.controls.puertas.touched" class="text-danger"></p>
+                </div>
+
+                <div [ngClass]="estilosInput(formulario.controls.version)" >
+                  <label form="version" class="control-label" id="version">Version:</label>
+                  <input formControlName="version" placeholder="Version" class="form-control">
+                  
+                </div>           
+              
+               </div>
+              
+               <div class="col-xs-6"> 
+                <div  [ngClass]="estilosInput(formulario.controls.fotoURL)" >                   
+                                            
+                  <!-- <img src={{formulario.controls.fotoURL.value}} alt="Imagen de la receta">-->
+                   <img [src]="formulario.controls.fotoURL.value" alt="Imagen de la receta {{formulario.controls.nombre}}"class=image-responsive>
+                                       
+                   <label form="fotoURL" class="control-label">Foto:</label>
+                   <input formControlName="fotoURL" placeholder="Url"  class="form-control">
+                   <p *ngIf="formulario.controls.fotoURL.invalid && formulario.controls.fotoURL.touched" class="text-danger">*Obligatorio</p>
+                </div>
+                </div>
+               
+                 </div>  <!--row--> 
+            <input type="submit" [disabled]="!formulario.valid" class="btn btn-success btn-block" value="Crear"  >
+          </form>
+        </div>        
+      </div>
+    </div>
+  </div>
+  
+
