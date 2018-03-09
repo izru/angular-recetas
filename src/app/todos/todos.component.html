@@ -1,0 +1,22 @@
+<div id="todos">
+  <section>
+    <h2>Lista Tareas </h2>
+    <div>
+      <input type="text" placeholder="NuevaTarea" id="nuevaTarea">
+      <a (click)="nueva(nuevaTarea.value)">
+      <span class="glyphicon glyphicon-plus-sign" ></span>  
+    </a>
+</div>
+  <ul>
+    <li *ngFor="let todo of todos" [ngClass]="estilos(todo.completed)" >
+      <input  type="checkbox" [checked]="todo.completed" (click)="cambiarCheck(todo)">{{todo.id}} {{todo.title}}
+      <a  (click)="modificar(todo.id)">
+      <span class="glyphicon glyphicon-pencil" ></span>
+    </a>
+      <a (click)="eliminar(todo.id)">
+      <span class="glyphicon glyphicon-remove-sign" ></span>
+    </a>
+    </li>    
+  </ul>
+  </section>
+  </div>

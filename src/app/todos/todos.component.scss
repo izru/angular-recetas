@@ -1,0 +1,41 @@
+
+#todos { 
+    /* The image used */
+    background-image: url("/assets/img/writing-pad-3202747_1920.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    min-height: 80vh;//80% de la altura de la pantalla
+    display:flex;//se le da al padre el flex
+
+    section{
+        padding: 30px;        
+     background-color:rgba(255,255,255,0.7);    
+        margin: auto;
+        width: 30vw;
+        h2{
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        ul{
+            list-style: none;
+            font-size: 1.2em;
+        }
+        li{
+            font-size: 0.7em;
+            margin-bottom: 1em;
+        }
+        input[type="checkbox"]{
+            margin-right:10px; 
+        }
+        .completa{
+            text-decoration:line-through;
+        }
+    }
+}

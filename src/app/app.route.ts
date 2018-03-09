@@ -11,6 +11,8 @@ import { ConcesionarioComponent } from './concesionario/concesionario.component'
 import { CocheComponent } from './concesionario/coche/coche.component';
 import { ListadoComponent } from './concesionario/listado/listado.component';
 import { RecetarioComponent } from './recetario/recetario.component';
+import { PlantillaComponent } from './plantilla/plantilla.component';
+import { TodosComponent } from './todos/todos.component';
 
 
 //Rutas de nuestra App
@@ -21,6 +23,8 @@ const appRoutes: Routes = [
     { path: 'usuarios',  component: UsuarioComponent },    
     { path: 'concesionario',  component: ConcesionarioComponent },    
     { path: 'recetario',  component: RecetarioComponent },    
+    { path: 'plantilla',  component: PlantillaComponent },   
+    { path: 'todos',  component: TodosComponent },   
     { path: '**',           component: Page404Component }
   ];
 

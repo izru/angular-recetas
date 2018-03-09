@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 //librerias para formulario
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+// Importar HttpClientModule
+import {HttpClientModule} from '@angular/common/http';
+
 //Nuestro Modulo para Routing
 import { AppRouter } from './app.route';
 
@@ -19,17 +22,25 @@ import { ListadoComponent } from './concesionario/listado/listado.component';
 import { RecetarioComponent } from './recetario/recetario.component';
 import { RecetaDetalleComponent } from './recetario/receta-detalle/receta-detalle.component';
 import { ListadoRecetaComponent } from './Recetario/listado-receta/listado-receta.component';
+import { FormularioComponent } from './recetario/formulario/formulario.component';
+import { NuevoComponent } from './concesionario/nuevo/nuevo.component';
+import { PlantillaComponent } from './plantilla/plantilla.component';
+import { TodosComponent } from './todos/todos.component';
 
 //servicios
 import {RecetasService} from './provides/recetas.service';
 import { CochesService } from './provides/coches.service';
+import { TodosService } from './provides/todos.service';
 
 //pipes
 import { FilterPipe } from './pipes/filter.pipe';
 import { RoundPipe } from './pipes/round.pipe';
 import { FilterRecetas } from './pipes/filtros-recetas.pipe';
-import { FormularioComponent } from './recetario/formulario/formulario.component';
-import { NuevoComponent } from './concesionario/nuevo/nuevo.component';
+
+
+import { HttpClient } from 'selenium-webdriver/http';
+
+
 
 
 
@@ -52,7 +63,9 @@ import { NuevoComponent } from './concesionario/nuevo/nuevo.component';
     ListadoRecetaComponent,
     FilterRecetas,
     FormularioComponent,
-    NuevoComponent
+    NuevoComponent,
+    PlantillaComponent,
+    TodosComponent
    
     
   ],
@@ -60,11 +73,14 @@ import { NuevoComponent } from './concesionario/nuevo/nuevo.component';
     BrowserModule,
     AppRouter,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
+    HttpClientModule,
     CochesService,
-    RecetasService
+    RecetasService,
+    TodosService,    
 
   ],
   bootstrap: [AppComponent]
