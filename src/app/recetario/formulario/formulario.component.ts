@@ -40,7 +40,7 @@ export class FormularioComponent implements OnInit {
       cocinero:['',[Validators.minLength(5)]],
       descripcion:['',[Validators.required, Validators.minLength(100)]],
       gluten:["true",[Validators.required]],
-      fotoURL:['./assets/img/cocheDefecto.png',[Validators.required]],
+      fotoURL:['./assets/img/receta_por_defecto.jpg',[Validators.required]],
       ingredientes:this.fb.array([this.createIngredienteFormGroup()],Validators.required)
     });
    
@@ -58,7 +58,7 @@ export class FormularioComponent implements OnInit {
        //limpiar Formulario y poner un solo ingrediente
     this.formulario.reset({
       gluten:"true",
-      fotoURL:"./assets/img/cocheDefecto.png"
+      fotoURL:"./assets/img/receta_por_defecto.jpg"
     });
     
     this.ingredientes.controls.splice(1);
