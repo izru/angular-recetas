@@ -2,7 +2,7 @@
     <section>
     <h2>Lista Tareas </h2>
     <div>
-      <input type="text" [(ngModel)]="nuevaTarea" placeholder="Nueva Tarea" id="nuevaTarea">
+      <input type="text" (ngModel)="nuevaTarea" placeholder="Nueva Tarea" id="nuevaTarea">
       <span class="glyphicon glyphicon-plus-sign" (click)="nueva()" ></span>  
       <hr>
     

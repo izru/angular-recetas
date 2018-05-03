@@ -39,6 +39,7 @@ import { FilterRecetas } from './pipes/filtros-recetas.pipe';
 
 
 import { HttpClient } from 'selenium-webdriver/http';
+import { FormBasicoComponent } from './form-basico/form-basico.component';
 
 
 
@@ -65,7 +66,8 @@ import { HttpClient } from 'selenium-webdriver/http';
     FormularioComponent,
     NuevoComponent,
     PlantillaComponent,
-    TodosComponent
+    TodosComponent,
+    FormBasicoComponent
    
     
   ],
